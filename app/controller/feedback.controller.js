@@ -33,7 +33,7 @@ exports.create = (req, res) => {
 		});
 };
 
-// Retrieve all preference from the database.
+// Retrieve all Feedbacks from the database.
 exports.findAll = (req, res) => {
 	const uname = req.query.uname;
 	var condition = uname ? { uname: { [Op.like]: `%${uname}%` } } : null;
@@ -49,7 +49,7 @@ exports.findAll = (req, res) => {
 		});
 };
 
-// Delete a preference with the specified id in the request
+// Delete a feedback with the specified id in the request
 exports.delete = (req, res) => {
 	const feedback = req.params.id;
 

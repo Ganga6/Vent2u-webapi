@@ -3,7 +3,7 @@ const db = require('../models');
 const Preference = db.preferences;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Tutorial
+// Create and Save a new Preference
 exports.create = (req, res) => {
 	console.log('create: ' + req);
 	// Validate request
@@ -15,14 +15,14 @@ exports.create = (req, res) => {
 		return;
 	}
 
-	// Create a Tutorial
+	// Create a Preference
 	const preference = {
 		pname: req.body.pname,
 		temperature: req.body.temperature,
 		humidity: req.body.humidity
 	};
 
-	// Save Tutorial in the database
+	// Save Preference in the database
 	Preference.create(preference)
 		.then((data) => {
 			res.send(data);

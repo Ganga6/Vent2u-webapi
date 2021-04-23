@@ -3,14 +3,13 @@ module.exports = (app) => {
 
 	var router = require('express').Router();
 
-	// Create a new Tutorial
+	// Create a new Feedback
 	router.post('/', feedback.create);
-	// Retrieve a single Tutorial with id
-	//router.get("/:preferenceid", preferences.findOne);
-	// Delete a Tutorial with id
+
+	// Delete a Feedback with id
 	router.delete('/:id', feedback.delete);
 
-	// Retrieve all Tutorials
+	// Retrieve all Feedbacks
 	router.get('/', feedback.findAll);
 
 	app.use('/api/feedback', router);
